@@ -1,0 +1,12 @@
+{
+    "usuario": {
+        "cpf"           : "26325227069",
+        "dtNascimento"  : "09/02/1999",
+        "nick"          : "Kartabil",
+        "nome"          : "Leonardo Kartabil",
+        "email"         : "hobihi8061@hyprhost.com",
+        "senha"         : "test@123",
+        "sexo"          : "Masculino",
+        "celular"       : "54981444444"
+    }
+}

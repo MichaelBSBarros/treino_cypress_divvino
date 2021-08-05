@@ -1,0 +1,11 @@
+{
+    "usuario": {
+        "cnpj"          : "01545335000158",
+        "nomeContato"   : "Contato Teste",
+        "razaoSocial"   : "Testes Ldta.",
+        "ie"            : "Isento",
+        "email"         : "hobihi8061@hyprhost.com",
+        "senha"         : "test@123",
+        "celular"       : "54981444444"
+    }
+}
