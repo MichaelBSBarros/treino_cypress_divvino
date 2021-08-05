@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 import {Given, When, Then, Before} from 'cypress-cucumber-preprocessor/steps'
 import {Divvino} from '../../pages/Divvino/divvino.page'
-import {Factory} from '../../fixtures/factory'
+import {Factory} from '../../fixtures/factories/factory'
 
 Given(`que esteja página home`, () => {
 	cy.visit('/')
@@ -25,10 +25,11 @@ When(`cadastrar uma {string}`, (tipo_pessoa) => {
 
     switch (tipo_pessoa) {
 
-        case 'pessoa_fisica': 
-            cy.get("@wrapCadastro").then( json => {
-                Divvino.cadastrar_pessoa_fisica(json)
-            })
+        case 'pessoa_fisica':
+            Divvino.cadastrar_pessoa_fisica_dinamica()
+            // cy.get("@wrapCadastro").then( json => {
+            //     Divvino.cadastrar_pessoa_fisica(json)
+            // })
             break;
 
         case 'pessoa_juridica':
