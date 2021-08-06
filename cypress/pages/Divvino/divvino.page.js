@@ -35,7 +35,8 @@ export class Divvino extends Base {
          
         };
 
-        super.typeValue(cd.INP_CELULAR, infos.celular)        
+        super.typeValue(cd.INP_CELULAR, infos.celular) 
+               
         //super.clickOnElement(cd.BTN_SALVAR)
 
         return true
