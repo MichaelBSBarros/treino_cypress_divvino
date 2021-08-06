@@ -33,10 +33,11 @@ When(`cadastrar uma {string}`, (tipo_pessoa) => {
             break;
 
         case 'pessoa_juridica':
-            cy.get("@wrapCadastro").then( json => {
-                Divvino.cadastrar_pessoa_juridica(json)
-            })
-            break;
+            Divvino.cadastrar_pessoa_juridica_dinamica()
+            //cy.get("@wrapCadastro").then( json => {
+            //    Divvino.cadastrar_pessoa_juridica(json)
+            //})
+            //break;
                  
     };
 	

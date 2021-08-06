@@ -27,6 +27,7 @@ export const Cadastro = {
     INP_CELULAR         : '#phone',
     CHK_IE              : '[id="isentoIE"]',
     
-    BTN_SALVAR          : '#send'
+    BTN_SALVAR          : '#send',
+    MSG_OLA_LOGADO      : '.top_menu_ul > :nth-child(1) > a'
 
 }

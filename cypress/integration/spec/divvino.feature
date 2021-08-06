@@ -19,5 +19,5 @@ Feature: Autenticação
         And cadastrar uma "<tipo_pessoa>"
         Examples:
             | tipo_pessoa     |
-            | pessoa_fisica   |
+            #| pessoa_fisica   |
             | pessoa_juridica |

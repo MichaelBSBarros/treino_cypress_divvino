@@ -31,5 +31,8 @@
       "generate": false,
       "outputFolder": "reports/json"
     }
+  },
+  "dependencies": {
+    "cnpj": "^3.2.0"
   }
 }

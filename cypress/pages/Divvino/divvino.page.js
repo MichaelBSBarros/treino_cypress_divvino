@@ -35,9 +35,9 @@ export class Divvino extends Base {
          
         };
 
-        super.typeValue(cd.INP_CELULAR, infos.celular)
-        
-        super.clickOnElement(cd.BTN_SALVAR)
+        super.typeValue(cd.INP_CELULAR, infos.celular)        
+        //super.clickOnElement(cd.BTN_SALVAR)
+
         return true
     }
 
@@ -68,12 +68,13 @@ export class Divvino extends Base {
     };
 
     static cadastrar_pessoa_fisica_dinamica(){
+
         var data = DynamicFactory.criarUsuario()
         super.clickOnElement(cd.BTN_PF)
         super.typeValue(cd.INP_CPF, data.usuario.cpf)
         super.typeValue(cd.INP_DT_NASC, data.usuario.dtNascimento)
         super.typeValue(cd.INP_NICK, data.usuario.nick)
-        super.typeValue(cd.INP_NOME, data.usuario.nome)
+        super.typeValue(cd.INP_NOME, `${data.usuario.nick} ${data.usuario.nome}`)
         super.typeValue(cd.INP_EMAIL, data.usuario.email)
         super.typeValue(cd.INP_CONF_EMAIL, data.usuario.email)
         super.typeValue(cd.INP_SENHA, data.usuario.senha)
@@ -90,5 +91,42 @@ export class Divvino extends Base {
                 cy.get(cd.CHK_FEM).check({ force : true });
                 break;
         }
+        super.typeValue(cd.INP_CELULAR, data.usuario.celular)
+
+        super.clickOnElement(cd.BTN_SALVAR)        
+        cy.get(cd.MSG_OLA_LOGADO).should('contain.text', `${'Olá,'} ${data.usuario.nick}`)
+
+        cy.wait(1000)
+        return true
+    }
+
+    static cadastrar_pessoa_juridica_dinamica(){
+        
+        super.clickOnElement(cd.BTN_CADASTRO_PJ)
+
+        var data = DynamicFactory.criarUsuarioPJ()
+
+        super.typeValue(cd.INP_CNPJ, data.usuario.cnpj)
+        super.typeValue(cd.INP_NOME_CONTATO, data.usuario.nomeContato)
+        super.typeValue(cd.INP_RAZAO, data.usuario.razaoSocial)
+
+        var isencao_ie = faker.random.boolean()
+        if (isencao_ie == false){
+            super.typeValue(cd.INP_IE, data.usuario.ie_num)
+        }else{
+            cy.get(cd.CHK_IE).check({ force : true });
+        }
+
+        super.typeValue(cd.INP_EMAIL, data.usuario.email)
+        super.typeValue(cd.INP_CONF_EMAIL, data.usuario.email)
+        super.typeValue(cd.INP_SENHA, data.usuario.senha)
+        super.typeValue(cd.INP_CONF_SENHA, data.usuario.senha)
+        super.typeValue(cd.INP_CELULAR, data.usuario.celular)
+
+        super.clickOnElement(cd.BTN_SALVAR)
+        cy.get(cd.MSG_OLA_LOGADO).should('contain.text', `${'Olá,'} ${data.usuario.nomeContato}`)
+
+        cy.wait(1000)
+        return true
     }
 }
