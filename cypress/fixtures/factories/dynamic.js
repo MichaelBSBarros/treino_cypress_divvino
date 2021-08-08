@@ -12,10 +12,7 @@ export default class DynamicFactory {
         var dtNascimento = new Date(dataInput)
 
         var generos = ['Masculino', 'Feminino']
-
-        //var telefone = faker.phone.phoneFormats;
-        
-
+       
         return {
             "usuario": {
                 "cpf"           : cpfFake(), //generate({format:true})
@@ -44,7 +41,7 @@ export default class DynamicFactory {
                 "nomeContato"   : `${faker.name.firstName()} ${faker.name.lastName()}`,
                 "razaoSocial"   : faker.company.companyName(),
                 //"ie_num"        : faker.datatype.number({'min': 111111111, 'max': 999999999}),
-                "ie_num"          : faker.random.arrayElement(ie_num),
+                "ie_num"        : faker.random.arrayElement(ie_num),
                 "email"         : faker.internet.email(),
                 "senha"         : faker.internet.password(),
                 "celular"       : faker.phone.phoneNumber('8199#######')
